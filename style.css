@@ -1,0 +1,164 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --text-color: white;
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --text-color: black;
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.1);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /* Características do corpo principal do html */
+  background-image: var(--bg-url);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+body * {
+  font-family: "Geist Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+}
+
+p {
+  color: var(--text-color);
+  padding: 15px;
+}
+
+a {
+  color: var(--text-color);
+}
+
+#Identificacao {
+  width: 420px;
+  margin: auto; /* Alinha horizontalmente */
+  padding: 0 24px;
+}
+
+#Foto {
+  text-align: center;
+}
+#Foto img {
+  width: 100px;
+  height: 100px;
+  border: 0.5px solid var(--stroke-color);
+  border-radius: 50px;
+}
+
+ion-icon {
+  padding: 2px 10px;
+}
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+
+  height: 24px;
+  width: 64px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* Alinha o texto à esquerda pra ficar próximo dos pontos */
+  gap: 15px;
+}
+
+ul li a {
+  /* Settings for every item in the list*/
+  /* Settings for the text */
+  text-decoration: none;
+  font-weight: 550;
+  color: var(--text-color);
+  padding: 9px;
+  height: 40px;
+
+  justify-content: center;
+  display: flex;
+  border: 1px solid var(--stroke-color);
+
+  /* Borda redonda */
+  background: var(--surface-color);
+  border-radius: 5px;
+
+  transition: all 0.5s;
+}
+
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid white;
+}
+
+#Infos {
+  /* Separation for the list */
+  width: 420px;
+  margin: auto;
+  text-align: center;
+  padding: 0 24px;
+}
+
+#separador {
+  /* border: 3px solid red; */
+  height: 50px;
+}
+
+footer {
+  color: var(--text-color);
+  padding: 24px 0;
+  text-align: center;
+  font-size: small;
+}
+/* Display block ocupa a linha inteira */
+/* Display inline cola lateralmente ao elemento anterior*/
+
+/* Alinhar pode ser através de transformar em block e margin auto */
+/* ou pode usar text-align */
+/* Os dois juntos provocam um problema */
